@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true, presence: true, format: { with: /^[\w.+-]+@([\w]+.)+\w+$/ }
 
   def create_avatar_url
-  	self.avatar_url = "http//gravatar.com/avatar/#{Digest::MD5.hexdigest(self.email)}?s=50"
+  	self.avatar_url = "http://gravatar.com/avatar/#{Digest::MD5.hexdigest(self.email)}?s=50"
   end
 
   private
