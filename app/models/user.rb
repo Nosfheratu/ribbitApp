@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_secure_password
   before_validation :prep_email
   before_save :create_avatar_url
+  has_many :ribbits
 
   validates :name, presence: true
   validates :username, uniqueness: true, presence: true
